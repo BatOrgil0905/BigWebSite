@@ -1,0 +1,139 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans, sans-serif;
+	background-image: url(wall.jpg);
+	text-align: center;
+
+}
+.button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 5px 7px #3d2173a1;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    float: right;
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+.button:hover{
+    box-shadow: none;
+    transform: scale(1) translateY(2px);
+    border: 0.5;
+}
+.container  {
+	max-width: 1400px;
+	margin-top: 30px;
+	margin-left: 30px;
+	text-align: center;
+}
+.menu {
+	width: 1300px;
+	height: 50px;
+	margin-top: 30px;
+	border: 2px solid #000;
+	margin-bottom: 15px;
+	display: inline-block;
+	position: relative;
+
+}
+@media screen and (max-width: 720px){
+	.menu {
+		text-align: center;
+	}
+}
+.container .menu .caption {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	background: rgba(0, 133, 113, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transform: translateX;
+	transition: .9s;
+
+}
+.box {
+	width: 300px;
+	height: 300px;
+	border: 3px dashed #000;
+	margin-left: 15px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	margin-left: 20px;
+	text-align: center;
+}
+.box img {
+	height: 100%;
+	width: 80%;
+	background-size: cover;
+	text-align: center;
+}
+.box .caption {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transform: translateY(-100%);
+	transition: .9s;
+	font-size: 12px;
+	font-family: cursive;
+	font-weight: 500;
+	padding: 5px;
+	text-align: center;
+
+}
+.box:hover .caption {
+	transform: translateY(0)
+}
+@media screen and (max-width: 720px){
+	.box {
+		display: inline-block;
+		margin-right: auto;
+	}
+}
+.continer {
+	max-width: 1400px;
+	margin-top: 30px;
+	margin-left: 30px;
+	text-align: center;
+
+}
+.imenu {
+	width: 1300px;
+	height: 50px;
+	border: 2px solid #000;
+	margin-bottom: 15px;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+
+}
+.continer .imenu .caption {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	background: rgba(69, 0, 138, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transform: translateX;
+	transition: .9s;
+	text-align: center;
+
+}

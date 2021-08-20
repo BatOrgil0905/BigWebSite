@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <style>
+        input{
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            font-size: 40px;
+            display: flex;
+            border: 1.2px solid #000;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+        }
+        .button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            box-shadow: 0 5px 7px #3d2173a1;
+            transition: all ease 0.3s;
+            cursor: pointer;
+            float: right;
+            margin-right: 700px;
+            margin-bottom: 10px;
+        }
+        .button:hover{
+            box-shadow: none;
+            transform: scale(1) translateY(2px);
+            border: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input id="MyInput"></td>
+        </tr>
+        <tr>
+            <td><button onclick="insert(7)">7</button></td>
+            <td><button onclick="insert(8)">8</button></td>
+            <td><button onclick="insert(9)">9</button></td>
+            <td><button onclick="insert('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="insert(4)">4</button></td>
+            <td><button onclick="insert(5)">5</button></td>
+            <td><button onclick="insert(6)">6</button></td>
+            <td><button onclick="insert('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="insert(1)">1</button></td>
+            <td><button onclick="insert(2)">2</button></td>
+            <td><button onclick="insert(3)">3</button></td>
+            <td><button onclick="insert('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clean()">C</button></td>
+            <td><button onclick="insert(0)">0</button></td>
+            <td><button onclick="insert('/')">/</button></td>
+            <td><button onclick="equal()">=</button></td>
+        </tr>
+    </table>
+    <a href="../advanced website/realwebsite.html">
+        <button class="button"></button>
+    </a>
+    <script>
+        function insert(arg){
+            var input = document.getElementById("MyInput")
+            input.value = input.value + arg
+        }
+        function clean(){
+            var input = document.getElementById("MyInput")
+            input.value = input.value.substring(0,input.value.lenght-1)
+        }
+        function equal(){
+            var input = document.getElementById("MyInput")
+            input.value = eval(input.value)
+        }
+    </script>
+</body>
+</html>

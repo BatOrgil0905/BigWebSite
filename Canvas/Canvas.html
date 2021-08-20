@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+	<style type="text/css">
+		#canvas {
+			border: 3px solid #000;
+			margin: 20px;
+			background: url(../../canvas.png);
+		}
+		.button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            box-shadow: 0 5px 7px #3d2173a1;
+            transition: all ease 0.3s;
+            cursor: pointer;
+            float: right;
+            margin-right: 500px;
+            margin-bottom: 10px;
+        }
+        .button:hover{
+            box-shadow: none;
+            transform: scale(1) translateY(2px);
+            border: 0.5;
+        }
+		
+	</style>
+	
+</head>
+<body>
+	<!-- Canvas -->
+	<canvas id="canvas" width="400" height="200"></canvas>
+	<input type="color" id="color" name="">
+	<a href="../realwebsite.html">
+        <button class="button"></button>
+    </a>
+	<script type="text/javascript">
+		let canvas = document.getElementById('canvas');
+		let ctx = canvas.getContext('2d');
+		let myColor = document.getElementById('color');
+		let width = 5;
+		let height = 5;
+		// ctx.fillStyle = 'red';
+		// ctx.fillRect(100, 50, 200, 100);
+		// ctx.fillStyle = 'blue';
+		// ctx.fillRect(100, 50, 150, 75);
+		// ctx.fillStyle = 'green';
+		// ctx.fillRect(100, 50, 100, 50);
+		// ctx.fillStyle = 'red';
+		// ctx.fillRect(100, 50, 50, 25);
+		// ctx.clearRect(0, 0, 400, 200);
+
+		// ctx.beginPath();
+		// ctx.lineWidth = '5';
+		// ctx.strokeStyle = 'cyan';
+		// ctx.moveTo(100, 50);
+		// ctx.lineTo(150, 150);
+		// ctx.stroke();
+
+		// ctx.beginPath();
+		// ctx.lineWidth = '10'
+		// ctx.strokeStyle = 'lime';
+		// ctx.moveTo(200, 50);
+		// ctx.lineTo(350, 50);
+		// ctx. lineCap = 'butt';
+		// ctx.stroke();
+
+		// canvas.onmousemove = event => {
+		// 	let x =  event.offsetX;
+		// 	let y = event.offsetY;
+		// 	ctx.fillRect(x, y, 5, 5);
+		// 	ctx.fill();
+		// }
+		
+
+		canvas. onmousedown = event => {
+			canvas.onmousemove = event => {
+					let x =  event.offsetX;
+					let y = event.offsetY;
+					ctx.fillRect(x-1, y-1, width, height);
+					ctx.fillStyle = myColor.value;
+					ctx.fill();
+
+				}
+			}	
+			canvas.onmouseup = () => {
+				canvas.onmousemove = null;
+			};
+			// let pi = Math.PI
+			// ctx.arc(200, 100, 50, 0, pi*2,)
+			// ctx.arc(200, 100, 60, 0, pi*2)
+			// ctx.stroke()
+
+
+			// toirog zurah code
+			//arc(x, y, radius, math.pi*2, true);
+		
+	</script>
+	
+</body>
+</html>

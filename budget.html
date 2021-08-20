@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js Beginning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <a href="../advanced website/realwebsite.html">
+        <button class="button"></button>
+    </a>
+	<div class="container">
+		<div class="balance">
+			<div class="uldegdel">
+				<h1>Үлдэгдэл: </h1>
+				<h1 id="balance">0</h1>
+			</div>
+			<div class="orlogo-zarlaga">
+				<div class="orlogo bud">
+					<div class="title">
+						<h5>Орлого:</h5>
+					</div>
+					<div class="amount">
+						<h5 id="orlogo">0</h5>
+					</div>
+				</div>
+				<div class="zarlaga bud">
+					<div class="title">
+						<h5>Зарлага:</h5>
+					</div>
+					<div class="amount">
+						<h5 id="zarlaga">0</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="insert">
+			<select id="mark">
+				<option value="+">+</option>
+				<option value="-">-</option>
+			</select>
+			<input placeholder="Тайлбар оруул..." id="description">
+			<input type="number" placeholder="Дүн" id="amount">
+			<button id="insert">Нэмэх</button>
+		</div>
+		<div class="list">
+			<div class="list-orlogo sublist">
+				<h1>Орлого</h1>
+				<div class="huvaalt">
+					<div class="description a">
+                        <ul id="orlogoTailbar"></ul>
+                    </div>
+					<div class="dun a">
+                        <ul id="orlogoDun"></ul>
+				    </div>
+                </div>
+			</div>
+			<div class="list-zarlaga sublist">
+				<h1>Зарлага</h1>
+				<div class="huvaalt">
+					<div class="description a">
+                        <ul id="zarlagaTailbar"></ul>
+					</div>
+					<div class="dun a">
+                        <ul id="zarlagaDun"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+<script>
+    var button = document.querySelector("#insert")
+    var income=0;
+    var expense=0;
+
+    function budget(){
+    var mark = document.querySelector("#mark");
+    var Tmark = mark.options[mark.selectedIndex].value;
+    var orlogoTailbar = document.querySelector('#orlogoTailbar');
+    var orlogoDun = document.querySelector('#orlogoDun');
+    var description = document.querySelector('#description').value;
+    var amount = parseInt(document.querySelector('#amount').value);
+    var zarlagaTailbar = document.querySelector('#zarlagaTailbar');
+    var zarlagaDun = document.querySelector('#zarlagaDun');
+    var bal = parseInt(document.querySelector('#balance').value);
+    if (Tmark === '+'){
+        orlogoTailbar.innerHTML += '<li>'+description +'</li>';
+        orlogoDun.innerHTML += '<li>'+Tmark + amount +'</li>';
+        income += amount;
+        orlogo.innerText =  Tmark + income;
+        balance.innerHTML = income - expense;
+    }
+    else{
+        zarlagaTailbar.innerHTML += '<li>' + description + '</li>';
+        zarlagaDun.innerHTML += '<li>' + Tmark + amount + '</li>';
+        expense += amount
+        zarlaga.innerText = Tmark + expense;
+        balance.innerHTML = income - expense;
+    }
+}
+button.addEventListener('click',function(){
+    budget()
+})
+</script>
+
+<style>
+    body,h1,h2,h3,h4,h5,h6,ul,li {
+    margin: 0;
+    padding: 0;
+}
+.button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0 5px 7px #3d2173a1;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    float: right;
+    margin-right: 70px;
+    margin-bottom: 10px;
+}
+.button:hover{
+    box-shadow: none;
+    transform: scale(1) translateY(2px);
+    border: 0.5;
+}
+.balance {
+    width: 100%;
+    background: skyblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.balance .uldegdel {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+.balance .orlogo-zarlaga {
+    margin-top: 25px;
+}
+.balance .orlogo-zarlaga .bud {
+    margin: 15px;
+    width: 250px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    color: #fff;
+}
+.orlogo {
+    background: green;
+}
+.zarlaga {
+    background: red;
+}
+.bud .title {
+    width: 50%;
+}
+.bud .amount {
+    width: 50%;
+    text-align: right;
+}
+.insert {
+    width: max-content;
+    padding: 15px;
+    background: #ccc;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+select , input , button{
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+select:focus {
+    outline: none;
+}
+input:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+button {
+    margin-right: 0 !important;
+}
+button:hover {
+    background: orange;
+    color: #fff;
+}
+.list {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.list .sublist {
+    width: 50%;
+}
+.list-orlogo h1{
+    color: green;
+}
+.list-zarlaga h1{
+    color: red;
+}
+.huvaalt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.a {
+    width: 50%;
+}
+</style>

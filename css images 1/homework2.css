@@ -1,0 +1,38 @@
+body {
+	margin: 100;
+	display: block;
+	padding: 100;
+}
+.header {
+	width: 100%;
+	border: 50px;
+}
+
+
+.a1 {
+	width: 1250px;
+	height: 500px;
+	background: gold;
+	margin: 20;
+}
+.right {
+	right: float;
+}
+.a2 {
+	width: 1250px;
+	height: 500px;
+	background: maroon;
+	padding: 4;
+}
+.b1 {
+	width: 1250px;
+	height: 500px;
+	background: lightgrey;
+	margin: 20;
+}
+.b2 {
+	width: 625px;
+	height: 500px;
+	background: pink;
+	margin: 20;
+}

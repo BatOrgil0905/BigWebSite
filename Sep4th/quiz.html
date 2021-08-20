@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Easy Quizzes</title>
+	<style type="text/css">
+		.button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            box-shadow: 0 5px 7px #3d2173a1;
+            transition: all ease 0.3s;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 10px;
+        }
+        .button:hover{
+            box-shadow: none;
+            transform: scale(1) translateY(2px);
+            border: 0.5;
+        }
+		
+	</style>
+</head>
+<body>
+	<a href="../realwebsite.html">
+		<button class="button"></button>
+	</a>
+	<script type="text/javascript">
+		var asuult = [
+		{
+		  prompt: "Australia-iin niislel yu ve?\n(a) Sydney\n(b) Canberra\n(c) Melbourne",
+          hariult: "b"
+		},
+		{
+		  prompt: "Ulaanbaatar hot heden duuregtei ve?\n(a) 9\n(b) 10\n(c) 8",
+          hariult: "a"
+        },
+        {
+		  prompt: "Mongol ulsiin 2 dahi eronhiilegch hen be?\n(a) Enhbayar\n(b) Bagabandi\n(c) Ochirbat",
+          hariult: "b"
+        },
+        {
+		  prompt: "Apple companiig uusgen baiguulagch hen be?\n(a) Tim Cook\n(b) Mark Zuckerberg\n(c) Steve Jobs",
+          hariult: "c"
+        },
+        {
+		  prompt: "6561 iin yzguur ni hed ve?\n(a) 61\n(b) 71\n(c) 81",
+          hariult: "c"
+        },
+
+		];
+		var score = 0;
+
+
+		for (var i = 0; i < asuult.length; i++) {
+			asuult[i]
+			var quiz = window.prompt(asuult[i].prompt);
+			if(quiz == asuult[i].hariult){
+				score++;
+				alert("Zuw baina!");
+			} else {
+				alert("Buruu baina!");
+			}
+		};
+		alert("Tanii awsan onoo " + score + "/" + asuult.length);
+	</script>
+</body>
+</html>
